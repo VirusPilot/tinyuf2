@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2020 Ha Thach (tinyusb.org) for Adafruit Industries
+ * Copyright (c) 2025 William Mulreed
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@
  * THE SOFTWARE.
  */
 
-#ifndef ESPRESSIF_S3_DEVKITC_H_
-#define ESPRESSIF_S3_DEVKITC_H_
+#ifndef WAVESHARE_ESP32_S3_MATRIX_H_
+#define WAVESHARE_ESP32_S3_MATRIX_H_
 
 //--------------------------------------------------------------------+
 // Button
@@ -42,33 +42,34 @@
 // LED
 //--------------------------------------------------------------------+
 
-// GPIO connected to Neopixel data
-#define NEOPIXEL_PIN          38
+// GPIO connected to the Neopixel Grid (the only onboard neopixel(s))
+#define NEOPIXEL_PIN          14
 
 // Brightness percentage from 1 to 255
-#define NEOPIXEL_BRIGHTNESS   0x10
+#define NEOPIXEL_BRIGHTNESS   0x05
 
-// Number of neopixels
-#define NEOPIXEL_NUMBER       1
+// 8x8 grid, 64 total
+#define NEOPIXEL_NUMBER       64
+
+// Invert Neopixel red and green
+#define NEOPIXEL_INVERT_RG    1
 
 
-// LED for indicator
+// LED for indicator and writing flash
 // If not defined neopixel will be use for flash writing instead
-// #define LED_PIN               42
-// #define LED_STATE_ON          1
 
 //--------------------------------------------------------------------+
 // USB UF2
 //--------------------------------------------------------------------+
 
-#define USB_VID           0x239A
-#define USB_PID           0x00A5    // TODO temporarily shared with S2 saola wrover
-#define USB_MANUFACTURER  "Espressif"
-#define USB_PRODUCT       "ESP32S3 DevKitC 1"
+#define USB_VID                  0x303a
+#define USB_PID                  0x826F
+#define USB_MANUFACTURER         "Waveshare Electronics"
+#define USB_PRODUCT              "ESP32-S3-Matrix"
 
-#define UF2_PRODUCT_NAME  USB_MANUFACTURER " " USB_PRODUCT
-#define UF2_BOARD_ID      "ESP32S3-DevKitC-v1.0"
-#define UF2_VOLUME_LABEL  "S3DKC1BOOT"
-#define UF2_INDEX_URL     "https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1.html"
+#define UF2_PRODUCT_NAME         USB_MANUFACTURER " " USB_PRODUCT
+#define UF2_BOARD_ID             "ESP32-S3-Matrix"
+#define UF2_VOLUME_LABEL         "WS3MTXBOOT"
+#define UF2_INDEX_URL            "https://www.waveshare.com/wiki/ESP32-S3-Matrix"
 
 #endif
